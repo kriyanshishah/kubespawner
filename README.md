@@ -15,7 +15,7 @@ information about features and usage. In particular, here is [a list of all the 
 
 ## Features
 
-Kubernetes is an open-source system for automating deployment, scaling, and
+Kubernetes is an open-source system for automating the deployment, scaling, and
 management of containerized applications. If you want to run a JupyterHub
 setup that needs to scale across multiple nodes (anything with over ~50
 simultaneous users), Kubernetes is a wonderful way to do it. Features include:
@@ -24,7 +24,7 @@ simultaneous users), Kubernetes is a wonderful way to do it. Features include:
   same set of powerful abstractions. Scale up and down as required by simply
   adding or removing nodes.
 
-- Run JupyterHub itself inside Kubernetes easily. This allows you to manage
+- Run JupyterHub itself inside Kubernetes efficiently. This allows you to manage
   many JupyterHub deployments with only Kubernetes, without requiring an extra
   layer of Ansible / Puppet / Bash scripts. This also provides easy integrated
   monitoring and failover for the hub process itself.
@@ -41,7 +41,7 @@ simultaneous users), Kubernetes is a wonderful way to do it. Features include:
   single-user notebooks can use. Kubernetes has comprehensive [resource control](https://kubernetes.io/docs/user-guide/compute-resources/) that can
   be used from the spawner.
 
-- Mount various types of [persistent volumes](https://kubernetes.io/docs/user-guide/persistent-volumes/)
+- Mount various types of [persistent volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
   onto the single-user notebook's container.
 
 - Control various security parameters (such as userid/groupid, SELinux, etc)
@@ -49,7 +49,7 @@ simultaneous users), Kubernetes is a wonderful way to do it. Features include:
 
 - Run easily in multiple clouds (or on your own machines). Helps avoid vendor
   lock-in. You can even spread out your cluster across
-  [multiple clouds at the same time](https://kubernetes.io/docs/user-guide/federation/).
+  [multiple clouds at the same time](https://kubernetes.io/id/docs/concepts/cluster-administration/federation/).
 
 In general, Kubernetes provides a ton of well thought out, useful features -
 and you can use all of them along with this spawner.
@@ -64,13 +64,13 @@ Requires JupyterHub 4.0+
 
 Everything should work from Kubernetes v1.24+.
 
-The [Kube DNS addon](https://kubernetes.io/docs/user-guide/connecting-applications/#dns)
+The [Kube DNS addon](https://kubernetes.io/docs/tutorials/services/connect-applications-service/#dns)
 is not strictly required - the spawner uses
-[environment variable](https://kubernetes.io/docs/user-guide/connecting-applications/#environment-variables)
-based discovery instead. Your kubernetes cluster will need to be configured to
+[environment variable](https://kubernetes.io/docs/tutorials/services/connect-applications-service/#environment-variables)
+based discovery instead. Your Kubernetes cluster will need to be configured to
 support the types of volumes you want to use.
 
-If you are just getting started and want a kubernetes cluster to play with,
+If you are just getting started and want a Kubernetes cluster to play with,
 [Google Container Engine](https://cloud.google.com/container-engine/) is
 probably the nicest option. For AWS/Azure,
 [kops](https://github.com/kubernetes/kops) is probably the way to go.
